@@ -12,20 +12,13 @@ int main(int argc, char **argv)
 	a = parse_args(argc, argv);
 	b = NULL;
 
-	pb(&a, &b);
-	pb(&a, &b);
+	if (stack_is_sorted(a))
+		return (0);
 
-	rra(&a);
-	rrb(&b);
-	rrr(&a, &b);
+	index_stack(a, stack_size(a)); // importante!
+	radix_sort(&a, &b);
 
-	write(1, "Stack A: ", 9);
 	stack_print(a);
-	write(1, "Stack B: ", 9);
-	stack_print(b);
-
 	return (0);
 }
-
-
 
