@@ -3,17 +3,29 @@
 
 int main(int argc, char **argv)
 {
-	t_node *stack_a;
+	t_node *a;
+	t_node *b;
 
 	if (argc < 2)
 		return (0);
 
-	stack_a = parse_args(argc, argv);
-	if (stack_is_sorted(stack_a))
-		return (0);
+	a = parse_args(argc, argv);
+	b = NULL;
 
-	index_stack(stack_a, stack_size(stack_a));
-	stack_print(stack_a);
+	pb(&a, &b);
+	pb(&a, &b);
+
+	rra(&a);
+	rrb(&b);
+	rrr(&a, &b);
+
+	write(1, "Stack A: ", 9);
+	stack_print(a);
+	write(1, "Stack B: ", 9);
+	stack_print(b);
 
 	return (0);
 }
+
+
+
