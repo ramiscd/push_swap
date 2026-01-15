@@ -4,31 +4,15 @@
 
 int main(int argc, char **argv)
 {
-    int     i;
-    long    value;
-    int     error;
+	t_node *stack_a;
 
-    if (argc < 2)
-        return (0);
+	if (argc < 2)
+		return 0;
 
-    i = 1;
-    while (i < argc)
-    {
-        if (!is_valid_number(argv[i]))
-        {
-            printf("Error\n");
-            return (1);
-        }
+	stack_a = parse_args(argc, argv);
+	if (stack_is_sorted(stack_a))
+		return (0);
+	stack_print(stack_a);
 
-        value = ft_atol_strict(argv[i], &error);
-        if (error)
-        {
-            printf("Error\n");
-            return (1);
-        }
-
-        printf("OK: %ld\n", value);
-        i++;
-    }
-    return (0);
+	return 0;
 }
