@@ -9,7 +9,7 @@ t_node *node_new(int value)
 	if (!node)
 		return (NULL);
 	node->value = value;
-	node->index = -1;   // ainda não indexado
+	node->index = -1;
 	node->next = NULL;
 	return (node);
 }
@@ -35,8 +35,21 @@ void stack_print(t_node *stack)
 {
 	while (stack)
 	{
-		printf("[%d] ", stack->value);
+		printf("[%d:%d] ", stack->value, stack->index);
 		stack = stack->next;
 	}
 	printf("\n");
+}
+
+int stack_size(t_node *stack)
+{
+	int size;
+
+	size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
 }
