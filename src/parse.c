@@ -1,8 +1,16 @@
-#include "../includes/push_swap.h"
-#include "../libft/libft.h"
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/20 22:38:29 by rdamasce          #+#    #+#             */
+/*   Updated: 2026/01/20 22:46:25 by rdamasce         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
 
 int is_valid_number(char *s)
 {

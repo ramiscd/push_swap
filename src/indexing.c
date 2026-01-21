@@ -1,7 +1,17 @@
-#include "../includes/push_swap.h"
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   indexing.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/20 22:43:53 by rdamasce          #+#    #+#             */
+/*   Updated: 2026/01/20 22:46:19 by rdamasce         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-/* função privada do módulo */
+#include "push_swap.h"
+
 static void assign_index(t_node *stack, int *arr, int size)
 {
 	int i;

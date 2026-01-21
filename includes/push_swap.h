@@ -1,9 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/20 22:43:22 by rdamasce          #+#    #+#             */
+/*   Updated: 2026/01/20 22:51:22 by rdamasce         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
+
+# include "libft.h"
 
 typedef struct s_node
 {
