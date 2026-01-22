@@ -5,35 +5,36 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/20 22:43:08 by rdamasce          #+#    #+#              #
-#    Updated: 2026/01/20 22:52:47 by rdamasce         ###   ########.fr        #
+#    Created: 2026/01/21 21:51:25 by rdamasce          #+#    #+#              #
+#    Updated: 2026/01/21 21:51:28 by rdamasce         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= push_swap
+NAME	= push_swap
 
-CC			= cc
-CFLAGS		= -Wall -Wextra -Werror
+CC		= cc
+CFLAGS	= -Wall -Wextra -Werror
 
-LIBFT_DIR	= libft
-LIBFT		= $(LIBFT_DIR)/libft.a
+INCLUDES = -Iincludes -Ilibft
 
-INCLUDES = -Iincludes -I$(LIBFT_DIR)
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
-SRC_DIR		= src
-OBJ_DIR		= obj
+SRCS = \
+	src/main.c \
+	src/parse.c \
+	src/stack.c \
+	src/utils.c \
+	src/indexing.c \
+	src/radix.c \
+	src/operations/pa_pb.c \
+	src/operations/sa_sb_ss.c \
+	src/operations/ra_rb_rr.c \
+	src/operations/rra_rrb_rrr.c
 
-SRC_FILES	= main.c \
-			  parse.c \
-			  radix.c \
-			  stack.c \
-			  utils.c \
-			  indexing.c
+OBJS = $(SRCS:src/%.c=obj/%.o)
 
-SRCS		= $(addprefix $(SRC_DIR)/, $(SRC_FILES))
-OBJS		= $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
-
-# ========================= RULES ========================= #
+OBJ_DIR = obj
 
 all: $(NAME)
 
@@ -43,11 +44,9 @@ $(NAME): $(LIBFT) $(OBJS)
 $(LIBFT):
 	make -C $(LIBFT_DIR)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+obj/%.o: src/%.c
+	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
 
 clean:
 	rm -rf $(OBJ_DIR)

@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 22:38:46 by rdamasce          #+#    #+#             */
-/*   Updated: 2026/01/20 22:46:30 by rdamasce         ###   ########.fr       */
+/*   Updated: 2026/01/21 19:33:03 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,9 @@ void stack_print(t_node *stack)
 {
 	while (stack)
 	{
-		printf("[%d:%d] ", stack->value, stack->index);
 		stack = stack->next;
 	}
-	printf("\n");
+	write(1, "\n", 1);
 }
 
 int stack_size(t_node *stack)

@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 22:43:22 by rdamasce          #+#    #+#             */
-/*   Updated: 2026/01/20 22:51:22 by rdamasce         ###   ########.fr       */
+/*   Updated: 2026/01/21 19:35:40 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void	sort_array(int *arr, int size);
 void	index_stack(t_node *stack, int size);
 
 /* operations */
-void	sa(t_node **stack_a);
 void	pa(t_node **stack_a, t_node **stack_b);
 void	pb(t_node **stack_a, t_node **stack_b);
 void	sa(t_node **stack_a);
