@@ -79,5 +79,3 @@ AI tools were used as a learning and support resource for:
 * Improving code organization and readability
 
 All implementation decisions, logic, and final code were written and validated by the author.
-
-```

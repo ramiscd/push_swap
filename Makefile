@@ -6,7 +6,7 @@
 #    By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/21 21:51:25 by rdamasce          #+#    #+#              #
-#    Updated: 2026/01/21 21:51:28 by rdamasce         ###   ########.fr        #
+#    Updated: 2026/01/21 22:49:59 by rdamasce         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS = \
 	src/parse.c \
 	src/stack.c \
 	src/utils.c \
+	src/sort_five.c \
 	src/indexing.c \
 	src/radix.c \
 	src/operations/pa_pb.c \
