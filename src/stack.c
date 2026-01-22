@@ -6,15 +6,15 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 22:38:46 by rdamasce          #+#    #+#             */
-/*   Updated: 2026/01/21 19:33:03 by rdamasce         ###   ########.fr       */
+/*   Updated: 2026/01/21 22:07:43 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node *node_new(int value)
+t_node	*node_new(int value)
 {
-	t_node *node;
+	t_node	*node;
 
 	node = malloc(sizeof(t_node));
 	if (!node)
@@ -25,16 +25,16 @@ t_node *node_new(int value)
 	return (node);
 }
 
-void node_add_back(t_node **stack, t_node *new)
+void	node_add_back(t_node **stack, t_node *new)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (!stack || !new)
-		return;
+		return ;
 	if (*stack == NULL)
 	{
 		*stack = new;
-		return;
+		return ;
 	}
 	tmp = *stack;
 	while (tmp->next)
@@ -42,7 +42,7 @@ void node_add_back(t_node **stack, t_node *new)
 	tmp->next = new;
 }
 
-void stack_print(t_node *stack)
+void	stack_print(t_node *stack)
 {
 	while (stack)
 	{
@@ -51,9 +51,9 @@ void stack_print(t_node *stack)
 	write(1, "\n", 1);
 }
 
-int stack_size(t_node *stack)
+int	stack_size(t_node *stack)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	while (stack)

@@ -6,15 +6,15 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 22:38:29 by rdamasce          #+#    #+#             */
-/*   Updated: 2026/01/20 22:46:25 by rdamasce         ###   ########.fr       */
+/*   Updated: 2026/01/21 22:25:11 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int is_valid_number(char *s)
+int	is_valid_number(char *s)
 {
-	int i;
+	int	i;
 
 	if (!s || !s[0])
 		return (0);
@@ -32,15 +32,14 @@ int is_valid_number(char *s)
 	return (1);
 }
 
-long ft_atol_strict(char *s, int *error)
+long	ft_atol_strict(char *s, int *error)
 {
-	long result;
-	int sign;
+	long	result;
+	int		sign;
 
 	result = 0;
 	sign = 1;
 	*error = 0;
-
 	if (*s == '+' || *s == '-')
 	{
 		if (*s == '-')
@@ -51,7 +50,7 @@ long ft_atol_strict(char *s, int *error)
 	{
 		result = result * 10 + (*s - '0');
 		if ((sign == 1 && result > INT_MAX)
-			|| (sign == -1 && -result < INT_MIN))
+			|| (sign == -1 && - result < INT_MIN))
 		{
 			*error = 1;
 			return (0);
@@ -61,7 +60,7 @@ long ft_atol_strict(char *s, int *error)
 	return (result * sign);
 }
 
-static void error_exit(void)
+static void	error_exit(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
@@ -69,8 +68,8 @@ static void error_exit(void)
 
 static int	has_duplicates(t_node *stack)
 {
-	t_node *tmp1;
-	t_node *tmp2;
+	t_node	*tmp1;
+	t_node	*tmp2;
 
 	tmp1 = stack;
 	while (tmp1)
@@ -79,12 +78,12 @@ static int	has_duplicates(t_node *stack)
 		while (tmp2)
 		{
 			if (tmp1->value == tmp2->value)
-				return 1;
+				return (1);
 			tmp2 = tmp2->next;
 		}
 		tmp1 = tmp1->next;
 	}
-	return 0;
+	return (0);
 }
 
 t_node	*parse_args(int argc, char **argv)
@@ -100,17 +99,13 @@ t_node	*parse_args(int argc, char **argv)
 	{
 		if (!is_valid_number(argv[i]))
 			error_exit();
-
 		value = ft_atol_strict(argv[i], &error);
 		if (error)
 			error_exit();
-
 		node_add_back(&stack_a, node_new((int)value));
 		i++;
 	}
-
 	if (has_duplicates(stack_a))
 		error_exit();
-
-	return stack_a;
+	return (stack_a);
 }

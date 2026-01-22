@@ -6,15 +6,15 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 22:43:53 by rdamasce          #+#    #+#             */
-/*   Updated: 2026/01/20 22:46:19 by rdamasce         ###   ########.fr       */
+/*   Updated: 2026/01/21 22:16:32 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void assign_index(t_node *stack, int *arr, int size)
+static void	assign_index(t_node *stack, int *arr, int size)
 {
-	int i;
+	int	i;
 
 	while (stack)
 	{
@@ -24,7 +24,7 @@ static void assign_index(t_node *stack, int *arr, int size)
 			if (stack->value == arr[i])
 			{
 				stack->index = i;
-				break;
+				break ;
 			}
 			i++;
 		}
@@ -32,15 +32,14 @@ static void assign_index(t_node *stack, int *arr, int size)
 	}
 }
 
-int *stack_to_array(t_node *stack, int size)
+int	*stack_to_array(t_node *stack, int size)
 {
-	int *arr;
-	int i;
+	int	*arr;
+	int	i;
 
 	arr = malloc(sizeof(int) * size);
 	if (!arr)
 		return (NULL);
-
 	i = 0;
 	while (stack)
 	{
@@ -50,10 +49,10 @@ int *stack_to_array(t_node *stack, int size)
 	return (arr);
 }
 
-void sort_array(int *arr, int size)
+void	sort_array(int *arr, int size)
 {
-	int i;
-	int tmp;
+	int	i;
+	int	tmp;
 
 	while (size > 0)
 	{
@@ -72,9 +71,9 @@ void sort_array(int *arr, int size)
 	}
 }
 
-void index_stack(t_node *stack, int size)
+void	index_stack(t_node *stack, int size)
 {
-	int *arr;
+	int	*arr;
 
 	arr = stack_to_array(stack, size);
 	if (!arr)

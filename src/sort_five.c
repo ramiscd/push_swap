@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa_pb.c                                            :+:      :+:    :+:   */
+/*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 22:43:35 by rdamasce          #+#    #+#             */
-/*   Updated: 2026/01/21 22:06:00 by rdamasce         ###   ########.fr       */
+/*   Created: 2026/01/21 22:27:10 by rdamasce          #+#    #+#             */
+/*   Updated: 2026/01/21 22:27:34 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push(t_node **from, t_node **to)
+void	sort_five(t_node **a, t_node **b)
 {
-	t_node	*tmp;
+	int	min;
+	int	pos;
+	int	size;
 
-	if (!from || !*from)
-		return ;
-	tmp = *from;
-	*from = tmp->next;
-	tmp->next = *to;
-	*to = tmp;
-}
-
-void	pa(t_node **stack_a, t_node **stack_b)
-{
-	push(stack_b, stack_a);
-	write(1, "pa\n", 3);
-}
-
-void	pb(t_node **stack_a, t_node **stack_b)
-{
-	push(stack_a, stack_b);
-	write(1, "pb\n", 3);
+	while (stack_size(*a) > 3)
+	{
+		min = find_min(*a);
+		pos = find_position(*a, min);
+		size = stack_size(*a);
+		if (pos <= size / 2)
+		{
+			while ((*a)->value != min)
+				ra(a);
+		}
+		else
+		{
+			while ((*a)->value != min)
+				rra(a);
+		}
+		pb(a, b);
+	}
+	sort_three(a);
+	while (*b)
+		pa(a, b);
 }

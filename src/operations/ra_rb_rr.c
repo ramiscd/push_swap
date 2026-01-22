@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 22:43:39 by rdamasce          #+#    #+#             */
-/*   Updated: 2026/01/20 22:45:57 by rdamasce         ###   ########.fr       */
+/*   Updated: 2026/01/21 22:05:42 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,16 @@
 
 static void	rotate(t_node **stack)
 {
-	t_node *first;
-	t_node *last;
+	t_node	*first;
+	t_node	*last;
 
 	if (!stack || !*stack || !(*stack)->next)
-		return;
-
+		return ;
 	first = *stack;
 	*stack = first->next;
-
 	last = *stack;
 	while (last->next)
 		last = last->next;
-
 	first->next = NULL;
 	last->next = first;
 }

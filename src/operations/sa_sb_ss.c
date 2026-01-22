@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 22:43:47 by rdamasce          #+#    #+#             */
-/*   Updated: 2026/01/20 22:46:13 by rdamasce         ###   ########.fr       */
+/*   Updated: 2026/01/21 22:04:46 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 static void	swap(t_node **stack)
 {
-	t_node *first;
-	t_node *second;
+	t_node	*first;
+	t_node	*second;
 
 	if (!stack || !*stack || !(*stack)->next)
-		return;
-
+		return ;
 	first = *stack;
 	second = first->next;
-
 	first->next = second->next;
 	second->next = first;
 	*stack = second;

@@ -6,16 +6,16 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 22:43:22 by rdamasce          #+#    #+#             */
-/*   Updated: 2026/01/21 19:35:40 by rdamasce         ###   ########.fr       */
+/*   Updated: 2026/01/21 22:24:12 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <limits.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
 
 # include "libft.h"
 
@@ -24,7 +24,7 @@ typedef struct s_node
 	int				value;
 	int				index;
 	struct s_node	*next;
-} t_node;
+}	t_node;
 
 /* stack */
 t_node	*node_new(int value);
@@ -44,8 +44,6 @@ void	sort_three(t_node **a);
 int		find_min(t_node *stack);
 int		find_position(t_node *stack, int value);
 void	sort_five(t_node **a, t_node **b);
-
-
 
 /* indexing */
 int		*stack_to_array(t_node *stack, int size);
